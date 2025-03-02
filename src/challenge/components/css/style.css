@@ -1,0 +1,63 @@
+/* p-[30px_30px_10px] bg-[#FAFAF8] */
+/* flex justify-center gap-2 */
+
+body{
+    background: #FAFAF8;
+}
+
+.main{
+    padding: 30px 30px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    /* border: 2px solid red; */
+}
+
+header{
+    /* w-[100%] h-[80px] bg-[#fff] flex justify-center items-center shadow-[0px_1px_3px_0px_rgba(0,0,0,0.10)] */
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.10), 0px 1px 3px 0px rgba(0,0,0,0.05);
+}
+
+.main form{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.main form input {
+    /* rounded-[6px] border-1 border-[#d1d5d8] p-[9px_13px] outline-none shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] grow-1 min-w-[150px] max-w-[400px] */
+    border-radius: 6px;
+    border: 1px solid #d1d5d8;
+    padding: 9px 13px;
+    outline: none;
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.05);
+    flex-grow: 1;
+    min-width: 150px;
+    max-width: 400px;
+}
+
+form button {
+    /* font-serif rounded-[6px] border-none bg-[#141413] text-[#fafaf8] text-[0.875rem] font-medium cursor-pointer p-2 before:content-['+'] before:mr-[5px] w-[150px] */
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 6px;
+    border: none;
+    background: #141413;
+    color: #fafaf8;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    width: 150px;
+}
+
+form button::before {
+    content: "+";
+    margin-right: 5px;
+
+}

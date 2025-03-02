@@ -6,6 +6,7 @@ import Articles from "./pages/articles"
 import Accounts from "./pages/accounts"
 import Login from "./pages/login"
 import Information from "./pages/information"
+// import "../index2.css"
 
 export default function () {
 

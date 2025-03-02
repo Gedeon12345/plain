@@ -48,8 +48,8 @@ export default function () {
                     <button className='cursor-pointer mt-5 w-[200px] h-[40px] text-[#fff] bg-[#f35004] rounded-[5px] font-semibold hover:bg-transparent transition duration-300 hover:border-2 border-[#fff] hover:text-[#fff]'>Explore Here</button>
                 </div>
             </section>
-            <section className='md:p-[50px] p-[20px] bg-[url(../src/wednesday/components/images/image1.jpg)] bg-fixed bg-center bg-no-repeat mt-[50px] w-full h-[300px] flex flex-col justify-center items-center'>
-                <div className='bg-[#ffffff] md:w-[95%] w-[100%] rounded-[10px] md:p-[20px] p-[10px] flex flex-col justify-center items-center'>
+            <section className='border-0 md:p-[50px]  p-[20px] bg-[url(../src/wednesday/components/images/image1.jpg)] bg-fixed bg-center bg-no-repeat mt-[50px] w-full h-[400px] flex flex-col justify-center items-center'>
+                <div className='bg-[#ffffff] m-[10px_0px] md:w-[95%] w-[100%] rounded-[10px] md:p-[20px] p-[10px] flex flex-col justify-center items-center'>
                     <div className='flex md:w-[100%] w-[100%'>
                         <span className='group cursor-pointer flex justify-center items-center md:mr-10 mr-[30px] relative transition duration-300'>
                             <div className='group-hover absolute top-[25px] bg-[#fff] w-[150px] p-[0px] rounded-[5px] hidden flex-col shadow-[2px_2px_10px_#000] z-10'>
