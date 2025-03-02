@@ -66,7 +66,7 @@ export default function () {
 
     const [count, setCount] = useState(0);
     const target = 41000000; // Target number
-    const duration = 2000; // Animation duration in ms (3 seconds)
+    const duration = 2000; // Animation duration in ms (2 seconds)
     const increment = Math.ceil(target / (duration / 16)); // Approx. step size
 
     useEffect(() => {

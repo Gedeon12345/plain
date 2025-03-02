@@ -22,7 +22,7 @@ export default function () {
                                 <Link className="hover:underline ">{destination.city }</Link>
                                 <div onClick={() => toggleDropDown(index)} className={`border-0 transition duration-300 ${openDropDown === index ? "rotate-[180deg] " : ""} `}>
                                     <i className={`las la-angle-down `}></i>
-                                </div>
+                                </div> 
                             </div>
                             {openDropDown === index && (
                                 <div className="border-0 w-[100%] h-[0%] mt-2 text-[#777272] text-[12px] transition duration-[1s] ">
