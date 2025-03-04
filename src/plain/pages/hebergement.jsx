@@ -22,6 +22,8 @@ import Section2 from "./travels/Section2"
 import Section3 from "./travels/section3"
 import QuestionSection1 from "./questions/questionSection1"
 import section1 from "./questions/section/section1"
+import Loader from "../components/loader"
+import TestimonialLoad from "../components/testiomialLoad"
 
 export default function () {
 
@@ -75,147 +77,167 @@ export default function () {
         return () => clearInterval(interval);
     }, []);
 
+    const[loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000)
+    }, []);
+
 
 
     return (
         <secction>
-            <section className="border-0 border-[red] mt-[90px] min-h-[400px] lg:w-[100%] md:w-[100%] sm:w-full bg-[#f0f3f5] flex items-center overflow-hidden rounded-[30px] ">
-                <div className="border-0 p-5 xl:w-[75%] w-[100%] h-[100%] flex flex-col lg:justify-start justify-center lg:items-start items-center ">
-                    <h1 className="border-0 md:ml-5 ml-0 text-[45px] text-[#192024] font-bold md:block hidden ">Comparez les offres d'hôtel parmi des centain de site</h1>
-                    <div className="border-0 md:ml-5 ml-0 md:w-[500px] w-[100%] md:mt-5 mb-5 flex md:justify-center justify-between items-center md:text-[12px] text-[13px] ">
-                        <Link to="/" className="border-0 md:w-[120px] w-[120px] flex flex-col justify-center items-center space-y-2 ">
-                            <div className="border-0 w-[50px] h-[50px] bg-[#fff] p-2 text-[#252323] flex justify-center items-center rounded-[10px] cursor-pointer shadow-[0px_4px_15px_rgba(0,0,0,0.2)] transition duration-150 hover:bg-[#00000013] ">
-                                <i className="las la-plane la-2x"></i>
+            {loading ? (
+                <Loader />
+            ) : (
+                <>
+                    <section className="border-0 border-[red] mt-[90px] min-h-[400px] lg:w-[100%] md:w-[100%] sm:w-full bg-[#f0f3f5] flex items-center overflow-hidden rounded-[30px] ">
+                        <div className="border-0 p-5 xl:w-[75%] w-[100%] h-[100%] flex flex-col lg:justify-start justify-center lg:items-start items-center ">
+                            <h1 className="border-0 md:ml-5 ml-0 text-[45px] text-[#192024] font-bold md:block hidden ">Comparez les offres d'hôtel parmi des centain de site</h1>
+                            <div className="border-0 md:ml-5 ml-0 md:w-[500px] w-[100%] md:mt-5 mb-5 flex md:justify-center justify-between items-center md:text-[12px] text-[13px] ">
+                                <Link to="/" className="border-0 md:w-[120px] w-[120px] flex flex-col justify-center items-center space-y-2 ">
+                                    <div className="border-0 w-[50px] h-[50px] bg-[#fff] p-2 text-[#252323] flex justify-center items-center rounded-[10px] cursor-pointer shadow-[0px_4px_15px_rgba(0,0,0,0.2)] transition duration-150 hover:bg-[#00000013] ">
+                                        <i className="las la-plane la-2x"></i>
+                                    </div>
+                                    <span>Vols</span>
+                                </Link>
+                                <Link to="/hebergement" className="border-0 md:w-[120px] w-[120px] flex flex-col justify-center items-center space-y-2 ">
+                                    <div className="border-0 w-[50px] h-[50px] bg-[#ff6b0fea] p-2 text-[#fff] flex justify-center items-center rounded-[10px] cursor-pointer shadow-[0px_4px_10px_rgba(0,0,0,0.1)] transition duration-150 hover:bg-[#ff6b0f] ">
+                                        <i className="las la-bed la-2x"></i>
+                                    </div>
+                                    <span>Hébergement</span>
+                                </Link>
+                                <Link to="/voiture"  className="border-0 md:w-[120px] w-[120px] flex flex-col justify-center items-center space-y-2 ">
+                                    <div className="border-0 w-[50px] h-[50px] bg-[#ffffff] p-2 text-[#252323] flex justify-center items-center rounded-[10px] cursor-pointer shadow-[0px_4px_15px_rgba(0,0,0,0.2)] transition duration-150 hover:bg-[#00000013] ">
+                                        <i className="las la-car la-2x"></i>
+                                    </div>
+                                    <span>Voiture</span>
+                                </Link>
+                                <Link to="/vol_hotel" className="border-0 md:w-[120px] w-[120px] flex flex-col justify-center items-center space-y-2 ">
+                                    <div className="border-0 w-[50px] h-[50px] bg-[#ffffff] p-2 text-[#252323] flex justify-center items-center rounded-[10px] cursor-pointer shadow-[0px_4px_15px_rgba(0,0,0,0.2)] transition duration-150 hover:bg-[#00000013] ">
+                                        <i className="las la-umbrella-beach la-2x"></i>
+                                    </div>
+                                    <span>Vols + Hotels</span>
+                                </Link>
                             </div>
-                            <span>Vols</span>
-                        </Link>
-                        <Link to="/hebergement" className="border-0 md:w-[120px] w-[120px] flex flex-col justify-center items-center space-y-2 ">
-                            <div className="border-0 w-[50px] h-[50px] bg-[#ff6b0fea] p-2 text-[#fff] flex justify-center items-center rounded-[10px] cursor-pointer shadow-[0px_4px_10px_rgba(0,0,0,0.1)] transition duration-150 hover:bg-[#ff6b0f] ">
-                                <i className="las la-bed la-2x"></i>
-                            </div>
-                            <span>Hébergement</span>
-                        </Link>
-                        <Link to="/voiture"  className="border-0 md:w-[120px] w-[120px] flex flex-col justify-center items-center space-y-2 ">
-                            <div className="border-0 w-[50px] h-[50px] bg-[#ffffff] p-2 text-[#252323] flex justify-center items-center rounded-[10px] cursor-pointer shadow-[0px_4px_15px_rgba(0,0,0,0.2)] transition duration-150 hover:bg-[#00000013] ">
-                                <i className="las la-car la-2x"></i>
-                            </div>
-                            <span>Voiture</span>
-                        </Link>
-                        <Link to="/vol_hotel" className="border-0 md:w-[120px] w-[120px] flex flex-col justify-center items-center space-y-2 ">
-                            <div className="border-0 w-[50px] h-[50px] bg-[#ffffff] p-2 text-[#252323] flex justify-center items-center rounded-[10px] cursor-pointer shadow-[0px_4px_15px_rgba(0,0,0,0.2)] transition duration-150 hover:bg-[#00000013] ">
-                                <i className="las la-umbrella-beach la-2x"></i>
-                            </div>
-                            <span>Vols + Hotels</span>
-                        </Link>
-                    </div>
-                    <div className="border-0 lg:p-2 lg:ml-5 ml-0 w-[100%] flex flex-col md:justify-start items-center justify-center ">
-                        <div className="border-0 lg:flex hidden justify-start items-center space-x-4 w-[100%] mb-3 ">
-                            <div className="space-x-2 cursor-pointer">
-                                <span>Aller-Retour</span>
-                                <i className="las la-angle-down"></i>
-                            </div>
-                            <div className="space-x-2 cursor-pointer">
-                                <span>Aucun bagage</span>
-                                <i className="las la-angle-down"></i>
-                            </div>
-                        </div>
-                        <div className="border-0 w-[100%] bg-[#fff] lg:flex hidden justify-between items-center shadow-[0px_4px_15px_rgba(0,0,0,0.2)] rounded-[10px] ">
-                            <div className="border-0 border-red-500 text-[#000] w-[55%] relative flex items-center justify-between ">
-                                <div className="border-0 p-4 mr-3 w-[100%] flex justify-start items-center rounded-[10px] space-x-2 transition duration-200 hover:bg-[#d9e2e8] cursor-pointer ">
-                                    <input className="border-0 w-[100%] outline-none " type="text" placeholder="Ville, hôtel, aéroport, adresse ou attractiondim" />
-                                </div>
-                            </div>
-                            <div className="border-0 w-[45%] flex justify-between items-center ">
-                                <div className="border-0 p-4 flex justify-center items-center rounded-[10px] transition duration-200 hover:bg-[#d9e2e8] cursor-pointer ">
-                                    <span>lun. 2/3</span>
-                                </div>
-                                <div className="border-0 p-4 flex justify-center items-center rounded-[10px] transition duration-200 hover:bg-[#d9e2e8] cursor-pointer ">
-                                    <span>lun. 3/3</span>
-                                </div>
-                                <div className="border-0 p-1 pl-3 flex justify-center items-center rounded-[10px] space-x-3 transition duration-200 hover:bg-[#d9e2e8] cursor-pointer ">
-                                    <span>1 chambre 2 personnes</span>
-                                    <div className="p-4 text-[#fff] bg-[#ff6b0fea] flex justify-center items-center cursor-pointer rounded-[10px] hover:bg-[#ff6b0f] ">
-                                        <i className="las la-search la-1x"></i>
+                            <div className="border-0 lg:p-2 lg:ml-5 ml-0 w-[100%] flex flex-col md:justify-start items-center justify-center ">
+                                <div className="border-0 lg:flex hidden justify-start items-center space-x-4 w-[100%] mb-3 ">
+                                    <div className="space-x-2 cursor-pointer">
+                                        <span>Aller-Retour</span>
+                                        <i className="las la-angle-down"></i>
+                                    </div>
+                                    <div className="space-x-2 cursor-pointer">
+                                        <span>Aucun bagage</span>
+                                        <i className="las la-angle-down"></i>
                                     </div>
                                 </div>
+                                <div className="border-0 w-[100%] bg-[#fff] lg:flex hidden justify-between items-center shadow-[0px_4px_15px_rgba(0,0,0,0.2)] rounded-[10px] ">
+                                    <div className="border-0 border-red-500 text-[#000] w-[55%] relative flex items-center justify-between ">
+                                        <div className="border-0 p-4 mr-3 w-[100%] flex justify-start items-center rounded-[10px] space-x-2 transition duration-200 hover:bg-[#d9e2e8] cursor-pointer ">
+                                            <input className="border-0 w-[100%] outline-none " type="text" placeholder="Ville, hôtel, aéroport, adresse ou attractiondim" />
+                                        </div>
+                                    </div>
+                                    <div className="border-0 w-[45%] flex justify-between items-center ">
+                                        <div className="border-0 p-4 flex justify-center items-center rounded-[10px] transition duration-200 hover:bg-[#d9e2e8] cursor-pointer ">
+                                            <span>lun. 2/3</span>
+                                        </div>
+                                        <div className="border-0 p-4 flex justify-center items-center rounded-[10px] transition duration-200 hover:bg-[#d9e2e8] cursor-pointer ">
+                                            <span>lun. 3/3</span>
+                                        </div>
+                                        <div className="border-0 p-1 pl-3 flex justify-center items-center rounded-[10px] space-x-3 transition duration-200 hover:bg-[#d9e2e8] cursor-pointer ">
+                                            <span>1 chambre 2 personnes</span>
+                                            <div className="p-4 text-[#fff] bg-[#ff6b0fea] flex justify-center items-center cursor-pointer rounded-[10px] hover:bg-[#ff6b0f] ">
+                                                <i className="las la-search la-1x"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>  
+                                <Destination  />  
+                            </div>  
+                        </div>
+                        <div className="border-0 w-[25%] h-[600px] xl:flex hidden relative ">
+                            <div className="border-0 space-y-4 w-[300px] ">
+                                <div className="border-0 w-[220px] h-[230px] rounded-[50px] object-center object-cover overflow-hidden ">
+                                        <img className="h-[230px] w-full object-center object-cover " src={image3} alt="" />
+                                </div>
+                                <div className="border-0 w-[220px] h-[230px] rounded-[50px] overflow-hidden ">
+                                    <img className="h-[300px] w-full object-center object-cover " src={image6} alt="" />
+                                </div>
+                                <div className="border-0 w-[220px] h-[230px] rounded-[50px] object-center object-cover overflow-hidden ">
+                                    <img className="h-[230px] w-full object-center object-cover " src={image10} alt="" />
+                                </div>
                             </div>
-                        </div>  
-                        <Destination  />  
-                    </div>  
-                </div>
-                <div className="border-0 w-[25%] h-[600px] xl:flex hidden relative ">
-                    <div className="border-0 space-y-4 w-[300px] ">
-                        <div className="border-0 w-[220px] h-[230px] rounded-[50px] object-center object-cover overflow-hidden ">
-                                <img className="h-[230px] w-full object-center object-cover " src={image3} alt="" />
+                            <div className="border-0 space-y-4 w-[300px] absolute right-[-220px] top-[-100px] ">
+                                <div className="border-0 w-[220px] h-[230px] rounded-[50px] object-center object-cover overflow-hidden ">
+                                    <img className="h-[230px] w-full object-center object-cover " src={image4} alt="" />
+                                </div>
+                                <div className="border-0 w-[220px] h-[230px] rounded-[50px] object-center object-cover overflow-hidden ">
+                                    <img className="h-[230px] w-full object-center object-cover " src={image8} alt="" />
+                                </div>
+                                <div className="border-0 w-[220px] h-[230px] rounded-[50px] object-center object-cover overflow-hidden ">
+                                    <img className="h-[230px] w-full object-center object-cover " src={image2} alt="" />
+                                </div>
+                            </div>
                         </div>
-                        <div className="border-0 w-[220px] h-[230px] rounded-[50px] overflow-hidden ">
-                            <img className="h-[300px] w-full object-center object-cover " src={image6} alt="" />
-                        </div>
-                        <div className="border-0 w-[220px] h-[230px] rounded-[50px] object-center object-cover overflow-hidden ">
-                            <img className="h-[230px] w-full object-center object-cover " src={image10} alt="" />
-                        </div>
-                    </div>
-                    <div className="border-0 space-y-4 w-[300px] absolute right-[-220px] top-[-100px] ">
-                        <div className="border-0 w-[220px] h-[230px] rounded-[50px] object-center object-cover overflow-hidden ">
-                            <img className="h-[230px] w-full object-center object-cover " src={image4} alt="" />
-                        </div>
-                        <div className="border-0 w-[220px] h-[230px] rounded-[50px] object-center object-cover overflow-hidden ">
-                            <img className="h-[230px] w-full object-center object-cover " src={image8} alt="" />
-                        </div>
-                        <div className="border-0 w-[220px] h-[230px] rounded-[50px] object-center object-cover overflow-hidden ">
-                            <img className="h-[230px] w-full object-center object-cover " src={image2} alt="" />
-                        </div>
-                    </div>
-                </div>
-            </section>
+                    </section>
+                    
+                </>
+            )}
 {/* Testimonials */}
-            <section className="border-0 p-4 mt-5 mb-5 w-[100%] bg-[#fff] overflow-hidden ">
-                <div className="border-0 p-2 w-[100%] flex lg:justify-center justify-start items-center space-x-2 no-scrollbar overflow-x-scroll ">
-                    <div className="border-1 xl:w-[450px] border-[#c7d5dd] flex flex-col justify-center items-start rounded-[30px] xl:p-6 pl-5 pr-5 p-0 xl:h-[auto] h-[230px] ">
-                        <div className="border-0 lg:h-[50px] h-[30%] lg:w-[auto] w-[230px] flex justify-start items-center lg:mb-6 mb-0 lg:mt-3 mt-0 ">
-                            <div className="w-[45px] h-[45px] bg-[#ff0000] rounded-[50%] "></div>
-                            <div className="w-[45px] h-[45px] bg-[#00ff00] rounded-[50%] -ml-2 "></div>
-                            <div className="w-[45px] h-[45px] bg-[#080808] rounded-[50%] -ml-2 "></div>
-                            <div className="w-[45px] h-[45px] bg-[#00e1ff] rounded-[50%] -ml-2 "></div>
-                            <div className="w-[45px] h-[45px] bg-[#3700ff] rounded-[50%] -ml-2 "></div>
-                        </div>
-                        <div className="border-0 lg:h-[auto] h-[50%] lg:mb-8 mb-0 lg:mr-0 mr-0 lg:space-y-0 space-y-1 lg:mt-0 mt-0 ">
-                            <h1 className="font-bold md:text-2xl text-[22px] text-[#192024] ">Économisez en comparant</h1>
-                            <h2 className="text-[#192024] ">Plus d'offres. Plus de sites. Une seule recherche</h2>
-                        </div>
-                    </div>
-                    <div className="border-1 xl:w-[450px] w-[500px] border-[#c7d5dd] flex flex-col justify-center items-start rounded-[30px] xl:p-6 pl-5 pr-5 p-0 xl:h-[auto] h-[230px] ">
-                        <div className="border-0 lg:h-[50px] h-[30%] lg:w-[auto] w-[230px] flex justify-start items-center lg:mb-6 lg-0 lg:mt-3 ">
-                            <div className="w-[45px] h-[45px] bg-[#999090] rounded-[50%] flex justify-center items-center ">
-                                <img className="w-[100%] h-[100%] rounded-[50%] " src={image10} alt="" />
+
+            {loading ? (
+                <TestimonialLoad />
+            ) : (
+                <section className="border-0 p-4 mt-5 mb-5 w-[100%] bg-[#fff] overflow-hidden ">
+                    <div className="border-0 p-2 w-[100%] flex lg:justify-center justify-start items-center space-x-2 no-scrollbar overflow-x-scroll ">
+                        <div className="border-1 xl:w-[450px] border-[#c7d5dd] flex flex-col justify-center items-start rounded-[30px] xl:p-6 pl-5 pr-5 p-0 xl:h-[auto] h-[230px] ">
+                            <div className="border-0 lg:h-[50px] h-[30%] lg:w-[auto] w-[230px] flex justify-start items-center lg:mb-6 mb-0 lg:mt-3 mt-0 ">
+                                <div className="w-[45px] h-[45px] bg-[#ff0000] rounded-[50%] "></div>
+                                <div className="w-[45px] h-[45px] bg-[#00ff00] rounded-[50%] -ml-2 "></div>
+                                <div className="w-[45px] h-[45px] bg-[#080808] rounded-[50%] -ml-2 "></div>
+                                <div className="w-[45px] h-[45px] bg-[#00e1ff] rounded-[50%] -ml-2 "></div>
+                                <div className="w-[45px] h-[45px] bg-[#3700ff] rounded-[50%] -ml-2 "></div>
                             </div>
-                            <div className="w-[45px] h-[45px] bg-[#00ff00] rounded-[50%] -ml-2 flex justify-center items-center ">
-                                <img className="w-[100%] h-[100%] rounded-[50%] " src={image2} alt="" />
-                            </div>
-                            <div className="w-[45px] h-[45px] bg-[#080808] rounded-[50%] -ml-2 flex justify-center items-center ">
-                                <img className="w-[100%] h-[100%] rounded-[50%] " src={image1} alt="" />
+                            <div className="border-0 lg:h-[auto] h-[50%] lg:mb-8 mb-0 lg:mr-0 mr-0 lg:space-y-0 space-y-1 lg:mt-0 mt-0 ">
+                                <h1 className="font-bold md:text-2xl text-[22px] text-[#192024] ">Économisez en comparant</h1>
+                                <h2 className="text-[#192024] ">Plus d'offres. Plus de sites. Une seule recherche</h2>
                             </div>
                         </div>
-                        <div className="border-0 lg:h-[auto] h-[50%] md:mb-8 mb-0 md:mr-0 mr-0 md:space-y-0 space-y-1 md:mt-0 mt-0 ">
-                            <h1 className="font-bold text-2xl text-[#192024] ">{count.toLocaleString()} +</h1>
-                            <h2 className="text-[#192024] ">Recherche cette semaine</h2>
+                        <div className="border-1 xl:w-[450px] w-[500px] border-[#c7d5dd] flex flex-col justify-center items-start rounded-[30px] xl:p-6 pl-5 pr-5 p-0 xl:h-[auto] h-[230px] ">
+                            <div className="border-0 lg:h-[50px] h-[30%] lg:w-[auto] w-[230px] flex justify-start items-center lg:mb-6 lg-0 lg:mt-3 ">
+                                <div className="w-[45px] h-[45px] bg-[#999090] rounded-[50%] flex justify-center items-center ">
+                                    <img className="w-[100%] h-[100%] rounded-[50%] " src={image10} alt="" />
+                                </div>
+                                <div className="w-[45px] h-[45px] bg-[#00ff00] rounded-[50%] -ml-2 flex justify-center items-center ">
+                                    <img className="w-[100%] h-[100%] rounded-[50%] " src={image2} alt="" />
+                                </div>
+                                <div className="w-[45px] h-[45px] bg-[#080808] rounded-[50%] -ml-2 flex justify-center items-center ">
+                                    <img className="w-[100%] h-[100%] rounded-[50%] " src={image1} alt="" />
+                                </div>
+                            </div>
+                            <div className="border-0 lg:h-[auto] h-[50%] md:mb-8 mb-0 md:mr-0 mr-0 md:space-y-0 space-y-1 md:mt-0 mt-0 ">
+                                <h1 className="font-bold text-2xl text-[#192024] ">{count.toLocaleString()} +</h1>
+                                <h2 className="text-[#192024] ">Recherche cette semaine</h2>
+                            </div>
+                        </div>
+                        <div className="border-1 w-[450px] border-[#c7d5dd] flex flex-col justify-center items-start rounded-[30px] xl:p-6 pl-5 pr-5 p-0 xl:h-[auto] h-[230px] ">
+                            <div className="border-0 lg:h-[50px] h-[30%] md:w-[auto] w-[230px] flex justify-strat items-center md:mb-6 mb-0 md:mt-3 mt-2 ">
+                                <i className="las la-star text-[25px] text-[#ffa30f] "></i>
+                                <i className="las la-star text-[25px] text-[#ffa30f] "></i>
+                                <i className="las la-star text-[25px] text-[#ffa30f] "></i>
+                                <i className="las la-star text-[25px] text-[#ffa30f] "></i>
+                                <i className="las la-star text-[25px] text-[#ffa30f] "></i>
+                            </div>
+                            <div className="border-0 lg:h-[auto] h-[50%] lg:mb-8 mb-0 lg:mr-0 mr-0 lg:space-y-0 space-y-1 lg:mt-0 mt-0 ">
+                                <h1 className="font-bold text-2xl text-[#192024] ">Économisez en comparant</h1>
+                                <h2 className="text-[#192024] ">Plus d'offres. Plus de sites. Une seule recherche</h2>
+                            </div>
                         </div>
                     </div>
-                    <div className="border-1 w-[450px] border-[#c7d5dd] flex flex-col justify-center items-start rounded-[30px] xl:p-6 pl-5 pr-5 p-0 xl:h-[auto] h-[230px] ">
-                        <div className="border-0 lg:h-[50px] h-[30%] md:w-[auto] w-[230px] flex justify-strat items-center md:mb-6 mb-0 md:mt-3 mt-2 ">
-                            <i className="las la-star text-[25px] text-[#ffa30f] "></i>
-                            <i className="las la-star text-[25px] text-[#ffa30f] "></i>
-                            <i className="las la-star text-[25px] text-[#ffa30f] "></i>
-                            <i className="las la-star text-[25px] text-[#ffa30f] "></i>
-                            <i className="las la-star text-[25px] text-[#ffa30f] "></i>
-                        </div>
-                        <div className="border-0 lg:h-[auto] h-[50%] lg:mb-8 mb-0 lg:mr-0 mr-0 lg:space-y-0 space-y-1 lg:mt-0 mt-0 ">
-                            <h1 className="font-bold text-2xl text-[#192024] ">Économisez en comparant</h1>
-                            <h2 className="text-[#192024] ">Plus d'offres. Plus de sites. Une seule recherche</h2>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                </section>
+            )}
 
 {/* Townsss */}
 

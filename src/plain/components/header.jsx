@@ -11,7 +11,7 @@ const Header = () => {
     const [isHovered, setIsHoverd] = useState(false)
 
     const toggleSidebar = () => {
-        setIsOpen(!isOpen)
+        setIsOpen((prev) => !prev )
     }
 
     const closeSidebar = () => {

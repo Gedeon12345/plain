@@ -22,6 +22,7 @@ import Section2 from "./travels/Section2"
 import Section3 from "./travels/section3"
 import QuestionSection1 from "./questions/questionSection1"
 import section1 from "./questions/section/section1"
+import Loader from "../components/loader"
 
 export default function () {
 
@@ -84,10 +85,21 @@ export default function () {
     }, []);
 
 
+    const[loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+        }, 3000)
+    }, []);
+
 
     return (
         <secction>
-            <section className="border-0 border-[red] mt-[90px] min-h-[400px] lg:w-[100%] md:w-[100%] sm:w-full bg-[#f0f3f5] flex items-center overflow-hidden rounded-[30px] ">
+            {loading ? (
+                <Loader />
+            ) : (
+                <section className="border-0 border-[red] mt-[90px] min-h-[400px] lg:w-[100%] md:w-[100%] sm:w-full bg-[#f0f3f5] flex items-center overflow-hidden rounded-[30px] ">
                 <div className="border-0 p-5 xl:w-[75%] w-[100%] h-[100%] flex flex-col lg:justify-start justify-center lg:items-start items-center ">
                     <h1 className="border-0 md:ml-5 ml-0 text-[45px] text-[#192024] font-bold md:block hidden ">Comparez les locations de voitures parmi des centaines de sites<span className="text-[#ff6b0fea] ">.</span></h1>
                     <div className="border-0 md:ml-5 ml-0 md:w-[500px] w-[100%] md:mt-5 mb-5 flex md:justify-center justify-between items-center md:text-[12px] text-[13px] ">
@@ -188,6 +200,7 @@ export default function () {
                     </div>
                 </div>
             </section>
+            )}
 {/* Testimonials */}
             <section className="border-0 p-4 mt-5 mb-5 w-[100%] bg-[#fff] overflow-hidden ">
                 <div className="border-0 p-2 w-[100%] flex lg:justify-center justify-start items-center space-x-2 no-scrollbar overflow-x-scroll ">
