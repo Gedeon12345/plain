@@ -90,7 +90,7 @@ export default function () {
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
-        }, 3000)
+        }, 2000)
     }, []);
 
 

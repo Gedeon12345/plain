@@ -84,7 +84,7 @@ export default function () {
                     <h1 className="border-0 md:ml-5 ml-0 text-[45px] text-[#192024] font-bold md:block hidden ">Comparez les offres de vols + Hôtels parmi des centain de site</h1>
                     <div className="border-0 md:ml-5 ml-0 md:w-[500px] w-[100%] md:mt-5 mb-5 flex md:justify-center justify-between items-center md:text-[12px] text-[13px] ">
                         <Link to="/" className="border-0 md:w-[120px] w-[120px] flex flex-col justify-center items-center space-y-2 ">
-                            <div className="border-0 w-[50px] h-[50px] bg-[#ff6b0fea] p-2 text-[#fff] flex justify-center items-center rounded-[10px] cursor-pointer shadow-[0px_4px_10px_rgba(0,0,0,0.1)] transition duration-150 hover:bg-[#ff6b0f] ">
+                            <div className="border-0 w-[50px] h-[50px] bg-[#fff] p-2 text-[#252323] flex justify-center items-center rounded-[10px] cursor-pointer shadow-[0px_4px_15px_rgba(0,0,0,0.2)] transition duration-150 hover:bg-[#00000013] ">
                                 <i className="las la-plane la-2x"></i>
                             </div>
                             <span>Vols</span>
@@ -102,7 +102,7 @@ export default function () {
                             <span>Voiture</span>
                         </Link>
                         <Link to="/vol_hotel" className="border-0 md:w-[120px] w-[120px] flex flex-col justify-center items-center space-y-2 ">
-                            <div className="border-0 w-[50px] h-[50px] bg-[#ffffff] p-2 text-[#252323] flex justify-center items-center rounded-[10px] cursor-pointer shadow-[0px_4px_15px_rgba(0,0,0,0.2)] transition duration-150 hover:bg-[#00000013] ">
+                            <div className="border-0 w-[50px] h-[50px] bg-[#ff6b0fea] p-2 text-[#fff] flex justify-center items-center rounded-[10px] cursor-pointer shadow-[0px_4px_10px_rgba(0,0,0,0.1)] transition duration-150 hover:bg-[#ff6b0f] ">
                                 <i className="las la-umbrella-beach la-2x"></i>
                             </div>
                             <span>Vols + Hotels</span>
